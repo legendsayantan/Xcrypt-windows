@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="480.0" style="-fx-background-color: #00000000;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.legendsayantan.xcrypt.CryptController">
+
+    <children>
+        <HBox style="-fx-background-color: #55b9f3; -fx-background-radius: 20 20 20 20; -fx-border-radius: 20 20 20 20;">
+            <children>
+                <VBox maxHeight="1.7976931348623157E308" styleClass="corner" stylesheets="@basicstyle.css">
+                    <children>
+                        <Label blendMode="SRC_ATOP" text="Progress Log" textFill="WHITE" translateY="-5.0" VBox.vgrow="ALWAYS">
+                            <VBox.margin>
+                                <Insets left="25.0" />
+                            </VBox.margin>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                            <effect>
+                                <DropShadow blurType="ONE_PASS_BOX" height="5.0" radius="2.0" width="5.0">
+                                    <color>
+                                        <Color red="0.3019607961177826" green="0.6549019813537598" blue="0.8588235378265381" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                        </Label>
+                        <ScrollPane fx:id="logView" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="250.0" prefWidth="360.0" stylesheets="@basicstyle.css" VBox.vgrow="ALWAYS">
+                            <effect>
+                                <DropShadow height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
+                                    <color>
+                                        <Color red="0.2823529541492462" green="0.615686297416687" blue="0.8117647171020508" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <styleClass>
+                                <String fx:value="flat" />
+                                <String fx:value="corner" />
+                            </styleClass>
+                            <padding>
+                                <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                            </padding>
+                     <content>
+                         <TextArea fx:id="log" accessibleRole="TEXT" editable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="209.0" prefWidth="215.0" scaleY="1.04" style="-fx-border-color: #55b9f3;" stylesheets="@basicstyle.css" translateY="-2.0" wrapText="true">
+                           <styleClass>
+                              <String fx:value="flat" />
+                              <String fx:value="textarea" />
+                           </styleClass>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <font>
+                              <Font size="10.0" />
+                           </font></TextArea>
+                     </content>
+                        </ScrollPane>
+                    </children>
+                    <effect>
+                        <DropShadow height="20.0" offsetX="-10.0" offsetY="-10.0" radius="9.5" width="20.0">
+                            <color>
+                                <Color red="0.3843137323856354" green="0.8352941274642944" blue="1.0" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <HBox.margin>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                    </HBox.margin>
+
+                </VBox>
+                <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                    <HBox.margin>
+                        <Insets bottom="25.0" right="25.0" top="25.0" />
+                    </HBox.margin>
+                    <children>
+                        <Separator opacity="0.0" orientation="VERTICAL" VBox.vgrow="ALWAYS" />
+                        <AnchorPane maxHeight="1.7976931348623157E308" prefWidth="220.0" VBox.vgrow="ALWAYS">
+                            <children>
+                        <Pane layoutX="-27.0" layoutY="-34.0" stylesheets="@basicstyle.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <PasswordField fx:id="key" alignment="CENTER" layoutX="5.0" prefWidth="100.0" promptText="Xcrypt key" style="-fx-prompt-text-fill: #FFFFFF; -fx-text-fill: #FFFFFF;" styleClass="flat" stylesheets="@basicstyle.css" translateY="10.0" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                           <styleClass>
+                              <String fx:value="flat" />
+                              <String fx:value="corner" />
+                           </styleClass>
+                        </Pane>
+<HBox prefWidth="0.0" AnchorPane.topAnchor="65.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+                                    <children>
+                                        <ToggleButton fx:id="enc" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onToggle1" prefHeight="25.0" prefWidth="50.0" stylesheets="@basicstyle.css">
+                                            <graphic>
+                                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@lock.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <styleClass>
+                                                <String fx:value="corner" />
+                                                <String fx:value="flat" />
+                                            </styleClass>
+                                        </ToggleButton>
+                                        <Separator opacity="0.0" prefHeight="5.0" prefWidth="73.0" HBox.hgrow="ALWAYS" />
+                                        <ToggleButton fx:id="dec" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onToggle2" prefHeight="25.0" prefWidth="50.0" stylesheets="@basicstyle.css">
+                                            <HBox.margin>
+                                                <Insets />
+                                            </HBox.margin>
+                                            <graphic>
+                                                <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@unlock.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <styleClass>
+                                                <String fx:value="corner" />
+                                                <String fx:value="flat" />
+                                            </styleClass>
+                                        </ToggleButton>
+                                    </children>
+                                </HBox>
+                                <ToggleButton fx:id="del" layoutX="25.0" layoutY="35.0" mnemonicParsing="false" onAction="#onToggle3" stylesheets="@basicstyle.css" textFill="WHITE" translateY="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+                                    <styleClass>
+                                        <String fx:value="corner" />
+                                        <String fx:value="flat" />
+                                    </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="15.0" pickOnBounds="true" preserveRatio="true" scaleX="1.3" scaleY="1.3">
+                                 <image>
+                                    <Image url="@trash.png" />
+                                 </image></ImageView>
+                           </graphic>
+                                </ToggleButton>
+                                <Button fx:id="run" layoutX="66.0" layoutY="35.0" mnemonicParsing="false" onAction="#onStart" stylesheets="@basicstyle.css" text="Run Xcrypt" textFill="WHITE" translateY="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="135.0">
+                                    <styleClass>
+                                        <String fx:value="corner" />
+                                        <String fx:value="flat" />
+                                    </styleClass>
+                                </Button>
+                        <Button fx:id="back" mnemonicParsing="false" onAction="#onBack" stylesheets="@basicstyle.css" text="Back" textFill="WHITE" translateY="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
+                           <styleClass>
+                              <String fx:value="corner" />
+                              <String fx:value="flat" />
+                           </styleClass></Button>
+                            </children>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <effect>
+                                <DropShadow height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
+                                    <color>
+                                        <Color red="0.2823529541492462" green="0.615686297416687" blue="0.8117647171020508" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                            <cursor>
+                                <Cursor fx:constant="DEFAULT" />
+                            </cursor>
+                        </AnchorPane>
+                        <Separator opacity="0.0" orientation="VERTICAL" VBox.vgrow="ALWAYS" />
+                    </children>
+                    <effect>
+                        <DropShadow height="20.0" offsetX="-5.0" offsetY="-5.0" radius="9.5" width="20.0">
+                            <color>
+                                <Color red="0.3843137323856354" green="0.8352941274642944" blue="1.0" />
+                            </color>
+                        </DropShadow>
+                    </effect>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+    </padding>
+</HBox>

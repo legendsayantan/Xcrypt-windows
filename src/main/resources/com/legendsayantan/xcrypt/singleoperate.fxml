@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane onDragDropped="#drop" onDragOver="#drag" prefHeight="240.0" prefWidth="400.0" stylesheets="@basicstyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.legendsayantan.xcrypt.SingleController">
+   <styleClass>
+      <String fx:value="flat" />
+      <String fx:value="corner" />
+   </styleClass>
+   <Label fx:id="title" alignment="CENTER" layoutX="136.0" layoutY="27.0" style="-fx-font-weight: bold;" text="Xcrypt - Single File Operation" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+      <cursor>
+         <Cursor fx:constant="DEFAULT" />
+      </cursor></Label>
+   <VBox alignment="CENTER" layoutX="109.0" layoutY="86.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="50.0">
+      <effect>
+         <DropShadow height="5.0" offsetX="-2.0" offsetY="-2.0" radius="2.0" width="5.0">
+            <color>
+               <Color red="0.3843137323856354" green="0.8352941274642944" blue="1.0" />
+            </color>
+         </DropShadow>
+      </effect>
+      <HBox alignment="CENTER" prefWidth="200.0">
+         <Button fx:id="choose" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onChoose" prefWidth="165.0" stylesheets="@basicstyle.css" text="Choose File" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" wrapText="true">
+            <styleClass>
+               <String fx:value="flat" />
+               <String fx:value="corner" />
+            </styleClass>
+            <effect>
+               <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0">
+                  <color>
+                     <Color red="0.2823529541492462" green="0.615686297416687" blue="0.8117647171020508" />
+                  </color>
+               </DropShadow>
+            </effect>
+            <padding>
+               <Insets bottom="10.0" left="25.0" right="25.0" top="10.0" />
+            </padding>
+            <HBox.margin>
+               <Insets right="20.0" />
+            </HBox.margin>
+         </Button>
+         <AnchorPane prefWidth="165.0" stylesheets="@basicstyle.css">
+            <styleClass>
+               <String fx:value="flat" />
+               <String fx:value="corner" />
+            </styleClass>
+            <effect>
+               <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0">
+                  <color>
+                     <Color red="0.2823529541492462" green="0.615686297416687" blue="0.8117647171020508" />
+                  </color>
+               </DropShadow>
+            </effect>
+            <PasswordField fx:id="key" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyTyped="#onKey" prefHeight="25.0" prefWidth="100.0" promptText="16 digit Xcrypt key" style="-fx-prompt-text-fill: #FFFFFF; -fx-text-fill: #FFFFFF;" styleClass="flat" stylesheets="@basicstyle.css" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0" />
+         </AnchorPane>
+      </HBox>
+      <AnchorPane maxWidth="1.7976931348623157E308" stylesheets="@basicstyle.css">
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+         <styleClass>
+            <String fx:value="flat" />
+            <String fx:value="corner" />
+         </styleClass>
+         <effect>
+            <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0">
+               <color>
+                  <Color red="0.2823529541492462" green="0.615686297416687" blue="0.8117647171020508" />
+               </color>
+            </DropShadow>
+         </effect>
+         <CheckBox fx:id="delete" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Delete result file when this window closed" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      </AnchorPane>
+      <HBox alignment="CENTER">
+         <padding>
+            <Insets bottom="15.0" top="15.0" />
+         </padding>
+         <Button fx:id="opener" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" stylesheets="@basicstyle.css" text="Xcrypt" textAlignment="CENTER" textFill="WHITE">
+            <styleClass>
+               <String fx:value="flat" />
+               <String fx:value="corner" />
+            </styleClass>
+            <effect>
+               <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0">
+                  <color>
+                     <Color red="0.2823529541492462" green="0.615686297416687" blue="0.8117647171020508" />
+                  </color>
+               </DropShadow>
+            </effect>
+            <HBox.margin>
+               <Insets right="25.0" />
+            </HBox.margin>
+         </Button>
+         <Button fx:id="folder" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" stylesheets="@basicstyle.css" text="Open folder" textAlignment="CENTER" textFill="WHITE">
+            <styleClass>
+               <String fx:value="flat" />
+               <String fx:value="corner" />
+            </styleClass>
+            <effect>
+               <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0">
+                  <color>
+                     <Color red="0.2823529541492462" green="0.615686297416687" blue="0.8117647171020508" />
+                  </color>
+               </DropShadow>
+            </effect>
+         </Button>
+         <Button fx:id="close" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onExit" prefHeight="25.0" prefWidth="100.0" stylesheets="@basicstyle.css" text="Close" textAlignment="CENTER" textFill="WHITE">
+            <styleClass>
+               <String fx:value="flat" />
+               <String fx:value="corner" />
+            </styleClass>
+            <effect>
+               <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="2.0" width="5.0">
+                  <color>
+                     <Color red="0.2823529541492462" green="0.615686297416687" blue="0.8117647171020508" />
+                  </color>
+               </DropShadow>
+            </effect>
+            <HBox.margin>
+               <Insets left="25.0" />
+            </HBox.margin>
+         </Button>
+      </HBox>
+   </VBox>
+</AnchorPane>

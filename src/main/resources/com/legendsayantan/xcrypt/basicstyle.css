@@ -1,0 +1,59 @@
+.corner{
+-fx-background-radius:20 20 20 20;
+-fx-border-radius:20 20 20 20;
+}
+.flat{
+-fx-background-color:#55b9f3;
+}
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill:white;
+
+}
+.scroll-bar:vertical {
+    -fx-pref-width: 8;
+    -fx-background-color: transparent;
+}
+.scroll-bar:horizontal {
+    -fx-pref-height: 8;
+    -fx-background-color: transparent;
+}
+.scroll-bar .thumb {
+    -fx-background-color:derive(#55b9f3, 25%);
+}
+.scroll-bar .filler {
+    -fx-background-color:transparent;
+}
+.scroll-bar .corner {
+    -fx-background-color:transparent;
+}
+.check-box .box {
+
+-fx-background-color: #62d5ff;
+-fx-border-color:#489dcf;
+-fx-border-radius:3px;
+
+}
+
+.check-box:selected .mark {
+
+-fx-background-color: derive(#55b9f3, 50%);
+
+}
+
+.check-box:selected .box {
+-fx-border-color:#489dcf;
+-fx-border-radius:3px;
+-fx-background-color: #489dcf;
+}
+.textarea{
+-fx-control-inner-background:#55b9f3;
+-fx-text-fill: WHITE;
+-fx-text-box-border:#55b9f3;
+-fx-background-color:#55b9f3;
+-fx-background-color: -fx-text-box-border, -fx-control-inner-background;
+-fx-border-color: #55b9f3;
+-fx-faint-focus-color: transparent;
+-fx-focus-color: transparent;
+}
+
