@@ -14,10 +14,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.input.TransferMode;
+import javafx.scene.input.*;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
@@ -73,7 +70,6 @@ public class HelloController {
                 for (String s : allPaths) {
                     toSave.append("|").append(s);
                 }
-                System.out.println(toSave);
                 HelloApplication.writeToPreferences("files", toSave.toString());
                 updateList();
             }, bufferedStage);
@@ -120,7 +116,6 @@ public class HelloController {
             for(String s:allPaths){
                 toSave.append("|").append(s);
             }
-            System.out.println(toSave);
             writeToPreferences("files", toSave.toString());
             updateList();
         }, bufferedStage);
@@ -251,7 +246,6 @@ public class HelloController {
                 for (String s : allPaths) {
                     toSave.append("|").append(s);
                 }
-                System.out.println(toSave);
                 HelloApplication.writeToPreferences("files", toSave.toString());
                 updateList();
             }, bufferedStage);
@@ -259,4 +253,8 @@ public class HelloController {
     }
 
     public void drag(DragEvent dragEvent) {dragEvent.acceptTransferModes(TransferMode.COPY);}
+
+    public void onKey(KeyEvent keyEvent) {
+        if(keyEvent.getCode()==KeyCode.ESCAPE)onExitPressed();
+    }
 }

@@ -71,7 +71,6 @@ public class SingleOperationManager {
                         CryptoUtils.decrypt(key,new File(str), decOut);
                         if(delete)filesToDelete.add(decOut);
                     } catch (CryptoException e) {
-                        System.out.println(e.getLocalizedMessage());
                         Platform.runLater(new Runnable() {
                             @Override
                             public void run() {
@@ -102,7 +101,6 @@ public class SingleOperationManager {
                         CryptoUtils.encrypt(key,new File(str),encOut);
                         if(delete)filesToDelete.add(encOut);
                     } catch (CryptoException e) {
-                        System.out.println(e.getLocalizedMessage());
                         Platform.runLater(new Runnable() {
                             @Override
                             public void run() {

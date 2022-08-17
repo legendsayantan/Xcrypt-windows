@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 
-<AnchorPane onDragDropped="#drop" onDragOver="#drag" prefHeight="240.0" prefWidth="400.0" stylesheets="@basicstyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.legendsayantan.xcrypt.SingleController">
+<AnchorPane onDragDropped="#drop" onDragOver="#drag" onKeyPressed="#onKeyPressed" prefHeight="240.0" prefWidth="400.0" stylesheets="@basicstyle.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.legendsayantan.xcrypt.SingleController">
    <styleClass>
       <String fx:value="flat" />
       <String fx:value="corner" />

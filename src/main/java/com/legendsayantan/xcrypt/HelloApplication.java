@@ -125,10 +125,8 @@ public class HelloApplication extends Application {
         time=System.currentTimeMillis();
         resetTime=System.currentTimeMillis();
         for(String str : files){
-            System.out.println(str);
             String[] parts = str.split("\\.");
             String ext = parts[parts.length-1].trim();
-            System.out.println(ext);
             if(ext.contains("xcrypt_")){
                 if(dec.isSelected()) {
                     printInfo("Decrypting " + str);

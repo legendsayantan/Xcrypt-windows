@@ -10,105 +10,99 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="480.0" style="-fx-background-color: #00000000;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.legendsayantan.xcrypt.AboutController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKey" prefHeight="360.0" prefWidth="480.0" style="-fx-background-color: #00000000;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.legendsayantan.xcrypt.AboutController">
 
     <children>
         <HBox style="-fx-background-color: #55b9f3; -fx-background-radius: 20 20 20 20; -fx-border-radius: 20 20 20 20;">
             <children>
                 <VBox maxHeight="1.7976931348623157E308" styleClass="corner" stylesheets="@basicstyle.css">
-                    <children>
-                        <Label blendMode="SRC_ATOP" text="About" textFill="WHITE" translateY="-5.0" VBox.vgrow="ALWAYS">
-                            <VBox.margin>
-                                <Insets left="25.0" />
-                            </VBox.margin>
-                            <font>
-                                <Font size="15.0" />
-                            </font>
-                            <effect>
-                                <DropShadow blurType="ONE_PASS_BOX" height="5.0" radius="2.0" width="5.0">
-                                    <color>
-                                        <Color red="0.3019607961177826" green="0.6549019813537598" blue="0.8588235378265381" />
-                                    </color>
-                                </DropShadow>
-                            </effect>
-                        </Label>
-                        <Pane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="250.0" prefWidth="360.0" stylesheets="@basicstyle.css" VBox.vgrow="ALWAYS">
-                            <effect>
-                                <DropShadow height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
-                                    <color>
-                                        <Color red="0.2823529541492462" green="0.615686297416687" blue="0.8117647171020508" />
-                                    </color>
-                                </DropShadow>
-                            </effect>
-                            <styleClass>
-                                <String fx:value="flat" />
-                                <String fx:value="corner" />
-                            </styleClass>
-                     <children>
+                    <Label blendMode="SRC_ATOP" text="About" textFill="WHITE" translateY="-5.0" VBox.vgrow="ALWAYS">
+                        <VBox.margin>
+                            <Insets left="25.0" />
+                        </VBox.margin>
+                        <font>
+                            <Font size="15.0" />
+                        </font>
+                        <effect>
+                            <DropShadow blurType="ONE_PASS_BOX" height="5.0" radius="2.0" width="5.0">
+                                <color>
+                                    <Color red="0.3019607961177826" green="0.6549019813537598" blue="0.8588235378265381" />
+                                </color>
+                            </DropShadow>
+                        </effect>
+                    </Label>
+                    <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="239.0" prefWidth="245.0" stylesheets="@basicstyle.css" VBox.vgrow="ALWAYS">
+                        <effect>
+                            <DropShadow height="20.0" offsetX="5.0" offsetY="5.0" radius="9.5" width="20.0">
+                                <color>
+                                    <Color red="0.2823529541492462" green="0.615686297416687" blue="0.8117647171020508" />
+                                </color>
+                            </DropShadow>
+                        </effect>
+                        <styleClass>
+                            <String fx:value="flat" />
+                            <String fx:value="corner" />
+                        </styleClass>
                         <HBox prefHeight="100.0" prefWidth="245.0">
-                           <children>
-                              <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@xcrypt.png" />
-                                 </image>
-                                 <effect>
-                                    <Reflection bottomOpacity="0.25" topOffset="5.0" />
-                                 </effect>
-                              </ImageView>
-                              <Label prefHeight="57.0" style="-fx-font-weight: bold;" text="CRYPT" textFill="#62d5ff" translateX="-15.0">
-                                 <font>
-                                    <Font name="Verdana" size="36.0" />
-                                 </font>
-                                 <effect>
-                                    <Reflection bottomOpacity="0.25" topOffset="5.0" />
-                                 </effect>
-                                 <HBox.margin>
-                                    <Insets top="48.0" />
-                                 </HBox.margin>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets top="25.0" />
-                           </padding>
-                           <effect>
-                              <Blend mode="HARD_LIGHT" />
-                           </effect>
+                            <children>
+                                <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@xcrypt.png" />
+                                    </image>
+                                    <effect>
+                                        <Reflection bottomOpacity="0.25" topOffset="5.0" />
+                                    </effect>
+                                </ImageView>
+                                <Label prefHeight="57.0" style="-fx-font-weight: bold;" text="CRYPT" textFill="#62d5ff" translateX="-15.0">
+                                    <font>
+                                        <Font name="Verdana" size="36.0" />
+                                    </font>
+                                    <effect>
+                                        <Reflection bottomOpacity="0.25" topOffset="5.0" />
+                                    </effect>
+                                    <HBox.margin>
+                                        <Insets top="48.0" />
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets top="25.0" />
+                            </padding>
+                            <effect>
+                                <Blend mode="HARD_LIGHT" />
+                            </effect>
                         </HBox>
                         <VBox layoutY="125.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="110.0" prefWidth="245.0">
-                           <children>
-                              <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
-                                 <children>
-                                    <Label fx:id="version" text="Version" textFill="WHITE" />
-                                 </children>
-                                 <VBox.margin>
+                            <HBox maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity">
+                                <VBox.margin>
                                     <Insets left="20.0" top="50.0" />
-                                 </VBox.margin></HBox>
-                              <HBox alignment="CENTER_LEFT">
-                                 <children>
+                                </VBox.margin>
+                                <Label fx:id="version" text="Version" textFill="WHITE" />
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT">
+                                <children>
                                     <Label text="From" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
                                     </Label>
                                     <Hyperlink fx:id="link" style="-fx-border-color: transparent;" text="LegendSayantan." textAlignment="CENTER" textFill="#e4f6ff">
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
                                     </Hyperlink>
-                                 </children>
-                                 <padding>
+                                </children>
+                                <padding>
                                     <Insets left="20.0" />
-                                 </padding>
-                                 <VBox.margin>
+                                </padding>
+                                <VBox.margin>
                                     <Insets />
-                                 </VBox.margin>
-                              </HBox>
-                           </children></VBox>
-                     </children>
-                        </Pane>
-                    </children>
+                                </VBox.margin>
+                            </HBox>
+                        </VBox>
+                    </Pane>
                     <effect>
-                        <DropShadow height="20.0" offsetX="-10.0" offsetY="-10.0" radius="9.5" width="20.0">
+                        <DropShadow height="20.0" offsetX="-8.0" offsetY="-8.0" radius="9.5" width="20.0">
                             <color>
                                 <Color red="0.3843137323856354" green="0.8352941274642944" blue="1.0" />
                             </color>
@@ -176,6 +170,9 @@
                             </color>
                         </DropShadow>
                     </effect>
+               <HBox.margin>
+                  <Insets bottom="25.0" top="2.0" />
+               </HBox.margin>
                 </VBox>
             </children>
         </HBox>

@@ -8,10 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.TransferMode;
+import javafx.scene.input.*;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -127,5 +124,9 @@ public class SingleController {
             }
             SingleOperationManager.processFile(filepath,xcryptKey,title,opener,folder,delete.isSelected());
         });
+    }
+
+    public void onKeyPressed(KeyEvent keyEvent) {
+        if(keyEvent.getCode()== KeyCode.ESCAPE)onExit();
     }
 }

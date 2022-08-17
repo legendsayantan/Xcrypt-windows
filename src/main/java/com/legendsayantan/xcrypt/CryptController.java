@@ -4,6 +4,8 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 import static com.legendsayantan.xcrypt.HelloApplication.*;
 
@@ -108,4 +110,7 @@ public class CryptController {
 
     }
 
+    public void onKey(KeyEvent keyEvent) {
+        if(keyEvent.getCode()== KeyCode.ESCAPE)onBack();
+    }
 }

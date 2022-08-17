@@ -10,7 +10,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="360.0" prefWidth="480.0" style="-fx-background-color: #00000000;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.legendsayantan.xcrypt.CryptController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#onKey" prefHeight="360.0" prefWidth="480.0" style="-fx-background-color: #00000000;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.legendsayantan.xcrypt.CryptController">
 
     <children>
         <HBox style="-fx-background-color: #55b9f3; -fx-background-radius: 20 20 20 20; -fx-border-radius: 20 20 20 20;">
