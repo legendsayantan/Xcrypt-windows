@@ -44,14 +44,15 @@ public class HelloApplication extends Application {
         stage.setResizable(false);
         stage.setTitle("Xcrypt");
         stage.setScene(scene);
-        stage.show();
         bufferedStage = stage;
+        stage.show();
         scene.setOnMousePressed(pressEvent -> {
             scene.setOnMouseDragged(dragEvent -> {
                 stage.setX(dragEvent.getScreenX() - pressEvent.getSceneX());
                 stage.setY(dragEvent.getScreenY() - pressEvent.getSceneY());
             });
         });
+
         hostServices=getHostServices();
         stage.getIcons().add(new Image(Objects.requireNonNull(HelloApplication.class.getResourceAsStream("xcrypt.png"))));
         stage.setOnCloseRequest(event -> {

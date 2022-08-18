@@ -58,6 +58,18 @@ public class SingleController {
             return;
         }
         xcryptKey=key.getText();
+        opener.setText("Xcrypt");
+        folder.setOnAction(event -> {});
+        opener.setOnAction(event -> {
+            if(filepath.equals("")) {
+                new CustomDialog(SingleOperationManager.Header,"Please Choose a file first.",null, stage);
+                return;
+            }if(xcryptKey.length()!=16) {
+                new CustomDialog(SingleOperationManager.Header,"Please Enter 16 digit Xcrypt Key.",null, stage);
+                return;
+            }
+            SingleOperationManager.processFile(filepath,xcryptKey,title,opener,folder,delete.isSelected());
+        });
     }
     @FXML
     public void onExit() {

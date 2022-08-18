@@ -3,6 +3,8 @@ package com.legendsayantan.xcrypt;
 import javafx.application.Platform;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -212,7 +214,6 @@ public class HelloController {
             });
             xView.setOnCloseRequest(event -> {
                 if (cryptrun) {
-                    xView.close();
                     new CustomDialog("Xcrypt", "Process is still running in background.",null
                     , xView);
                 } else {
@@ -222,6 +223,11 @@ public class HelloController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        ChangeListener<Boolean> listener = (observable, oldValue, newValue) -> {
+            if(newValue)updateList();
+        };
+        bufferedStage.focusedProperty().removeListener(listener);
+        bufferedStage.focusedProperty().addListener(listener);
     }
     private void buttonClickAnimator(Button button){
         button.setOnMousePressed(event -> button.setStyle("-fx-background-radius:20 20 20 20;\n"+ "-fx-border-radius:20 20 20 20;\n" +
@@ -256,5 +262,9 @@ public class HelloController {
 
     public void onKey(KeyEvent keyEvent) {
         if(keyEvent.getCode()==KeyCode.ESCAPE)onExitPressed();
+    }
+
+    public void mouseEnter(MouseEvent mouseEvent) {
+
     }
 }
