@@ -1,12 +1,11 @@
 package com.legendsayantan.xcrypt;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.input.Clipboard;
-import javafx.scene.input.ClipboardContent;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.input.*;
 
 import java.io.IOException;
 import java.net.URI;
@@ -14,6 +13,7 @@ import java.net.URISyntaxException;
 
 import static com.legendsayantan.xcrypt.HelloApplication.bufferedStage;
 import static com.legendsayantan.xcrypt.HelloController.aboutStage;
+import static com.legendsayantan.xcrypt.HelloController.listener;
 
 public class AboutController {
     public Hyperlink link;
@@ -72,5 +72,14 @@ public class AboutController {
         if(keyEvent.getCode()== KeyCode.ESCAPE){
             aboutClose();
         }
+    }
+
+    public void deleteAll() {
+        new CustomDialog("Xcrypt", "Do you want to remove all saved filepaths? This action cannot be undone.",
+                event -> {
+                    HelloApplication.writeToPreferences("files","");
+                    bufferedStage.focusedProperty().removeListener(listener);
+                    bufferedStage.focusedProperty().addListener(listener);
+                },aboutStage);
     }
 }

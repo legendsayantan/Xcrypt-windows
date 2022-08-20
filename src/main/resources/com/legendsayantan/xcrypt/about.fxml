@@ -86,11 +86,15 @@
                                             <Font name="System Bold" size="12.0" />
                                         </font>
                                     </Label>
-                                    <Hyperlink fx:id="link" style="-fx-border-color: transparent;" text="LegendSayantan." textAlignment="CENTER" textFill="#e4f6ff">
+                                    <Hyperlink fx:id="link" prefWidth="150.0" style="-fx-border-color: transparent;" text="LegendSayantan." textAlignment="CENTER" textFill="#e4f6ff">
                                         <font>
                                             <Font name="System Bold" size="12.0" />
                                         </font>
                                     </Hyperlink>
+                           <ImageView fitHeight="20.0" fitWidth="20.0" onMouseClicked="#deleteAll" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                              <image>
+                                 <Image url="@trash.png" />
+                              </image></ImageView>
                                 </children>
                                 <padding>
                                     <Insets left="20.0" />

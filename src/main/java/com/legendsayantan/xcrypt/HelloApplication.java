@@ -86,11 +86,22 @@ public class HelloApplication extends Application {
     }
 
     public static String readFromPreference(String key) {
-        return pref.get(key, "");
+        String s1 = pref.get(key, "");
+        String s2 = pref.get("_"+key,"");
+        if(s2.equals(""))
+        return s1;
+        else return s1+s2;
     }
 
     public static void writeToPreferences(String key, String value) {
-        pref.put(key, value);
+        if(value.length()>8192){
+            String s1 = value.substring(0,8192), s2 = value.substring(8192);
+            pref.put("_"+key, s2);
+            pref.put(key, s1);
+        }else {
+            pref.put("_"+key,"");
+            pref.put(key, value);
+        }
     }
 
     public static void initCrypt(PasswordField pf, ToggleButton en,ToggleButton de,ToggleButton del){
@@ -208,18 +219,15 @@ public class HelloApplication extends Application {
         return ret;
     }
     public static void doOperation(PasswordField key,ToggleButton en,ToggleButton de,ToggleButton delete){
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                log.setText("");
-                Xcrypt(key,en,de,delete);
-                StringBuilder toSave = new StringBuilder();
-                for (String s : results) {
-                    toSave.append("|").append(s);
-                }
-                HelloApplication.writeToPreferences("files", toSave.toString());
-                cryptrun=false;
+        new Thread(() -> {
+            log.setText("");
+            Xcrypt(key,en,de,delete);
+            StringBuilder toSave = new StringBuilder();
+            for (String s : results) {
+                toSave.append("|").append(s);
             }
+            HelloApplication.writeToPreferences("files", toSave.toString());
+            cryptrun=false;
         }).start();
     }
 }

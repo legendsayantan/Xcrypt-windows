@@ -1,10 +1,8 @@
 package com.legendsayantan.xcrypt;
 
-import javafx.application.Platform;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -12,7 +10,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.Image;
@@ -29,7 +26,6 @@ import java.util.*;
 import java.util.prefs.Preferences;
 
 import static com.legendsayantan.xcrypt.HelloApplication.*;
-import static com.legendsayantan.xcrypt.SingleOperationManager.stage;
 
 public class HelloController {
     static ListProperty<String> property = new SimpleListProperty<>();
@@ -37,6 +33,8 @@ public class HelloController {
     ArrayList<String> strings = new ArrayList<>();
     public static Stage xView;
     public static Stage aboutStage;
+    public static ChangeListener<Boolean> listener;
+
     @FXML
     private ListView<String> listView;
     @FXML
@@ -68,12 +66,20 @@ public class HelloController {
                 String[] savedFiles = saved.split("\\|");
                 allPaths.addAll(Arrays.asList(savedFiles));
                 allPaths.removeIf(s -> s.trim().equals(""));
+                allPaths.removeIf(s -> !s.contains("."));
+                HashSet<String> hashSet = new HashSet<>(allPaths);
+                allPaths = new ArrayList<>(hashSet);
                 StringBuilder toSave = new StringBuilder();
                 for (String s : allPaths) {
                     toSave.append("|").append(s);
                 }
-                HelloApplication.writeToPreferences("files", toSave.toString());
-                updateList();
+                if(toSave.length()+(allPaths.size()*7)>16384){
+                    new CustomDialog("Xcrypt","Too much files to keep saved in app , try less",null,bufferedStage);
+                }
+                else{
+                    HelloApplication.writeToPreferences("files", toSave.toString());
+                    updateList();
+                }
             }, bufferedStage);
         }
     }
@@ -113,6 +119,7 @@ public class HelloController {
             String[] savedFiles = saved.split("\\|");
             ArrayList<String> allPaths = new ArrayList<>(Arrays.asList(savedFiles));
             allPaths.removeIf(s -> s.trim().equals(""));
+            allPaths.removeIf(s -> !s.contains("."));
             allPaths.remove(strings.indexOf(listView.getSelectionModel().getSelectedItem().toString()));
             StringBuilder toSave = new StringBuilder();
             for(String s:allPaths){
@@ -176,6 +183,9 @@ public class HelloController {
             });
 
         });
+        listener = (observable, oldValue, newValue) -> {
+            if(newValue)updateList();
+        };
     }
     @FXML
     private void onXcrypt(){
@@ -223,7 +233,7 @@ public class HelloController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ChangeListener<Boolean> listener = (observable, oldValue, newValue) -> {
+        listener = (observable, oldValue, newValue) -> {
             if(newValue)updateList();
         };
         bufferedStage.focusedProperty().removeListener(listener);
