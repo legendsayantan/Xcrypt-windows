@@ -192,15 +192,14 @@ public class HelloApplication extends Application {
 
     }
     public static String formatTime(long ms){
-        if(ms>1000){
+        if(ms>1000){//going into seconds
             ms=ms/1000;
-            if(ms>60){
-                String s= String.valueOf(ms);
+            if(ms>60){//going into minutes
+                long s = ms;
                 ms=ms/60;
-                if(ms>60){
-                    String m= String.valueOf(ms);
-                    return ms+" h "+m+" m "+s+" s";
-                }else return ms+" m "+s+" s";
+                if(ms>60){//going into hours
+                    return ms/60+" h "+ ms%60+" m "+s%60+" s";
+                }else return ms+" m "+s%60+" s";
             }else return ms+" s";
         }else return ms+" ms";
     }

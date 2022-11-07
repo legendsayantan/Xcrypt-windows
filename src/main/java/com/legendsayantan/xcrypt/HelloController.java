@@ -92,10 +92,8 @@ public class HelloController {
             }, bufferedStage);
             return;
         }
-        new CustomDialog("Xcrypt", "Do you want to close Xcrypt?", event -> {
-            bufferedStage.close();
-            System.exit(0);
-        }, bufferedStage);
+        bufferedStage.close();
+        System.exit(0);
     }
     public void updateList(){
         listView.itemsProperty().bind(property);
